@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
   $name=$_POST["name"];
   $age=$_POST["age"];
   $tell=$_POST["tell"];
-  $mail=$_POST["mail"];
+  $mail=$_POST["email"];
   $address=$_POST["address"];
   $question=$_POST["question"];
   $gender=$_POST["gender"];
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
     $errors[]= "<p>電話番号は半角数字とハイフンのみ使用できます。</p>";
   }
 
-  if (!filter_var($mail,FILTER_VALIDATE_EMAIL)) {
+  if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
     $errors[]= "<p>メールアドレスの形式が正しくありません。</p>";
   }
 
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
   echo "<p>名前：" . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>年齢：" . htmlspecialchars($age, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>電話番号：" . htmlspecialchars($tell, ENT_QUOTES, 'UTF-8') . "</p>";
-  echo "<p>メールアドレス：" . htmlspecialchars($mail, ENT_QUOTES, 'UTF-8') . "</p>";
+  echo "<p>メールアドレス：" . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>住所：" . htmlspecialchars($address, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>質問：" . htmlspecialchars($question, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>性別：" . htmlspecialchars($gender, ENT_QUOTES, 'UTF-8') . "</p>";
