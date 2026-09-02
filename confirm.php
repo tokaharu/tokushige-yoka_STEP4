@@ -12,8 +12,8 @@
 if ($_SERVER["REQUEST_METHOD"]==="POST") {
   $name=$_POST["name"];
   $age=$_POST["age"];
-  $tell=$_POST["phone"];
-  $mail=$_POST["email"];
+  $phone=$_POST["phone"];
+  $email=$_POST["email"];
   $address=$_POST["address"];
   $question=$_POST["question"];
   $gender=$_POST["gender"];
