@@ -12,7 +12,7 @@
 if ($_SERVER["REQUEST_METHOD"]==="POST") {
   $name=$_POST["name"];
   $age=$_POST["age"];
-  $tell=$_POST["tell"];
+  $tell=$_POST["phone"];
   $mail=$_POST["email"];
   $address=$_POST["address"];
   $question=$_POST["question"];
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
     $errors[]= "<p>年齢は0から150の間で入力してください。</p>";
   }
 
-  if (!preg_match("/^[0-9\-]+$/",$tell)) {
+  if (!preg_match("/^[0-9\-]+$/",$phone)) {
     $errors[]= "<p>電話番号は半角数字とハイフンのみ使用できます。</p>";
   }
 
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
   echo "<h2>入力内容</h2>";
   echo "<p>名前：" . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>年齢：" . htmlspecialchars($age, ENT_QUOTES, 'UTF-8') . "</p>";
-  echo "<p>電話番号：" . htmlspecialchars($tell, ENT_QUOTES, 'UTF-8') . "</p>";
+  echo "<p>電話番号：" . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>メールアドレス：" . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>住所：" . htmlspecialchars($address, ENT_QUOTES, 'UTF-8') . "</p>";
   echo "<p>質問：" . htmlspecialchars($question, ENT_QUOTES, 'UTF-8') . "</p>";
